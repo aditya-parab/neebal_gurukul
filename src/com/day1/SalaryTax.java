@@ -15,10 +15,10 @@ public class SalaryTax {
 			tax = 0.3;
 		}
 		else {
-			if(salary>1000000 && salary<=1500000) {
+			if(salary>1000000) {
 				tax = 0.2;
 			}
-			else if (salary>750000 && salary <=1000000){
+			else if (salary>750000){
 				tax = .10; 
 			}
 			else {
