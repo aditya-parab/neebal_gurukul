@@ -27,7 +27,7 @@ public class SalaryTax {
 		}
 		double takehomesalary = salary-(tax*salary);
 		System.out.println("The salary is "+salary);
-		System.out.println("The tax is "+tax);
+		System.out.println("The tax is "+tax+" and tax amount is "+(salary*tax));
 		System.out.println("The takehome salary is " + takehomesalary);
 
 	}
