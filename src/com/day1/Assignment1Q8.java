@@ -7,10 +7,10 @@ public class Assignment1Q8 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String name = sc.next();
-//		int units = sc.nextInt();
+		int units = sc.nextInt();
 		double extra,price;
 		price = 0;
-		int units = 310;
+//		int units = 310;
 		if(units>100) {
 			price = 100*4;
 			units = units-100;
