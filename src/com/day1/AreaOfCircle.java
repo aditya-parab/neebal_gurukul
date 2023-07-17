@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class AreaOfCircle {
 	public static void main(String [] args) {
+		//hello!!
 		Scanner sc  = new Scanner(System.in);
 		System.out.print("What is the radius: ");
 		double r = sc.nextDouble();
