@@ -21,6 +21,7 @@ public class Assignment1Q1 {
 		System.out.println("Time is: "+hrs+":"+min+":"+sec);
 		
 		
+		
 
 	}
 
