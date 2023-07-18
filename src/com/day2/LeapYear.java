@@ -10,22 +10,30 @@ public class LeapYear {
 		Scanner sc = new Scanner(System.in);
 		year = sc.nextInt();
 		boolean flag=false;
-		if(year%4==0) {
-			if(year%100 != 0) {
-				flag=true;
-			}
-			else {
-				if(year%400==0)
-					flag=true;
-			}
+		if(year%400==0 || (year%4==0 && year%100!=0))
+			System.out.println("Leap year");
+		else {
+			System.out.println("Not a leap year");
 		}
 		
-		if(flag) {
-			System.out.println("Leap yr");
-		}
-		else {
-			System.out.println("Not leap year");
-		}
+		
+		
+//		if(year%4==0) {
+//			if(year%100 != 0) {
+//				flag=true;
+//			}
+//			else {
+//				if(year%400==0)
+//					flag=true;
+//			}
+//		}
+//		
+//		if(flag) {
+//			System.out.println("Leap yr");
+//		}
+//		else {
+//			System.out.println("Not leap year");
+//		}
 
 	}
 
