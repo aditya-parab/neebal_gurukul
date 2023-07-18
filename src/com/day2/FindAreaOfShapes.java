@@ -9,6 +9,7 @@ public class FindAreaOfShapes {
 		
 		System.out.println("Please select your shape by choosing integer : 1.Square 2.Circle 3.Triangle");
 		Scanner sc = new Scanner(System.in);
+	
 		int key = sc.nextInt();
 		switch (key) {
 		case 1: {
