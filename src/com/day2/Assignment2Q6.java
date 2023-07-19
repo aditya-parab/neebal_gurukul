@@ -15,7 +15,7 @@ public class Assignment2Q6 {
 		int f=0;
 		int s =1;
 		
-		for(int i = 1; ;i++) {
+		for(; ;) {
 			if(f>=lower && f<upper) {
 			System.out.print(f+" ");
 			}
