@@ -6,9 +6,10 @@ public class WhileShape1 {
 			int i=1;
 			while( i<=5) {
 				j=1;
-				while(j<=5-i) {
+				 while(j<=5-i) {
 					System.out.print("-");
 					j++;
+					
 				}
 				j=i;
 				while(j>=1) {
