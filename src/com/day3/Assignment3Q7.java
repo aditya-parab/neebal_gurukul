@@ -24,6 +24,7 @@ public class Assignment3Q7 {
 			switch (digit) {
 			case 0:
 				ans="Zero";
+				break;
 			case 1:
 				word="One";
 				break;

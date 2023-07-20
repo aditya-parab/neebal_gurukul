@@ -56,10 +56,7 @@ public class Assignment3Q1 {
 			System.out.print("*");
 			}
 			
-//			if(i==6) {
-//				System.out.print("_");
-//				S
-//			}
+
 
 
 			System.out.println();
