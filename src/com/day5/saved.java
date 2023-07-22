@@ -195,22 +195,20 @@ public class LegoSetCompetition {
 		int piecesUsed1=0;
 		int piecesUsed2=0;
 		
-		System.out.println("Enter the number of pieces player "+p1.getPlayerNumber()+" used for building on day"+days);
-		int pieces1 = sc.nextInt();
-		remLegos1-=pieces1;
-		piecesUsed1+=pieces1;
-		
-		
-		System.out.println("Enter the number of pieces player "+p2.getPlayerNumber()+" used for building on day"+days);
-		int pieces2 = sc.nextInt();
-		remLegos2-=pieces2;
-		piecesUsed2+=pieces2;
-
-		days+=1;
-		
 		//is game finished?
 		while(remLegos1>=0 && remLegos2>=0) {
+			System.out.println("Enter the number of pieces player "+p1.getPlayerNumber()+" used for building on day"+days);
+			int pieces1 = sc.nextInt();
+			remLegos1-=pieces1;
+			piecesUsed1+=pieces1;
+			
+			
+			System.out.println("Enter the number of pieces player "+p2.getPlayerNumber()+" used for building on day"+days);
+			int pieces2 = sc.nextInt();
+			remLegos2-=pieces2;
+			piecesUsed2+=pieces2;
 
+			days+=1;
 		}
 		
 		
@@ -246,16 +244,12 @@ public class LegoSetCompetition {
 					}
 				
 				}
-			
-			if(p2Done=="")
-				p2Done="None";
-			
-			
 			p2.setCompleteSets(p2Done);
 			p2.setIncompletesets(p2NotDone);
 			p2.setPiecesBuilt(piecesUsed2);
 			
-		
+			if(p2Done=="")
+				p2Done="None";
 		
 			System.out.println(p1);
 			System.out.println(p2);
