@@ -259,6 +259,7 @@ public class LegoSetCompetition {
 		
 			System.out.println(p1);
 			System.out.println(p2);
+			System.out.println("The competition lasted "+days+" days.");
 			break;
 			}
 			
@@ -306,6 +307,7 @@ public class LegoSetCompetition {
 			
 			System.out.println(p1);
 			System.out.println(p2);
+			System.out.println("The competition lasted "+days+" days.");
 			break;
 		}
 		}}}
