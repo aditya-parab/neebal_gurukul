@@ -18,6 +18,12 @@ class CourseData{
 		this.semester=semester;
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Course name: "+name+" Course Id: "+id+" semester: "+semester;
+	}
+	
 	
 }
 
@@ -29,6 +35,10 @@ class StudentData{
 	
 	public StudentData() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public void addCourse(CourseData c) {
+		courseList.add(c);
 	}
 	
 	StudentData(String name, int id){
@@ -105,9 +115,17 @@ public class Assignment_day8 {
 		
 		case 2:{
 			//enrol a student in a course
+
+			
 			System.out.println("Please enter the students name");
 			String new_name = sc.next();
+			
 			if(roster_names.contains(new_name)) {
+				System.out.println("Here are the available courses: ");
+				System.out.println("physics");
+				System.out.println("math");
+				System.out.println("eng");
+				System.out.println("geo");
 				System.out.println("Please enter course name");
 				String cname = sc.next();
 				System.out.println("Please enter course id");
@@ -118,11 +136,11 @@ public class Assignment_day8 {
 				//find student in roster
 				int index=0;
 				for(int i=0;i<roster.size();i++) {
-					if(roster.get(i).getName()==new_name) {
+					if(roster.get(i).getName().equals(new_name)) {
 						index=i;
 					}
 				}
-				roster.get(index).courseList.add(c);
+				roster.get(index).addCourse(c);
 				
 				
 				
