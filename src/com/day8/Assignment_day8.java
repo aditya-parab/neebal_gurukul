@@ -3,11 +3,29 @@ package com.day8;
 import java.util.*;
 
 
+class CourseData{
+	String name;
+	int id;
+	String semester;
+	
+	public CourseData() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	CourseData(String name, int id, String semester){
+		this.name=name;
+		this.id=id;
+		this.semester=semester;
+	}
+	
+	
+}
+
 
 class StudentData{
 	String name;
 	int id;
-	ArrayList<String> courseList = new ArrayList<String>();
+	ArrayList<CourseData> courseList = new ArrayList<CourseData>();
 	
 	public StudentData() {
 		// TODO Auto-generated constructor stub
@@ -35,9 +53,6 @@ class StudentData{
 		this.id = id;
 	}
 
-	public ArrayList<CourseData> getCourseList() {
-		return courseList;
-	}
 	
 	@Override
 	public String toString() {
@@ -49,46 +64,6 @@ class StudentData{
 	
 }
 
-
-class CourseData{
-	int id;
-	String name;
-	String semester;
-	
-	public CourseData() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	CourseData(int id, String name, String semester){
-		this.id = id;
-		this.name = name;
-		this.semester=semester;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSemester() {
-		return semester;
-	}
-
-	public void setSemester(String semester) {
-		this.semester = semester;
-	}
-}
 public class Assignment_day8 {
 	
 
@@ -105,7 +80,7 @@ public class Assignment_day8 {
 		System.out.println("1. Add new student to roster");
 		System.out.println("2. Enrol a student in a course");
 		System.out.println("3. Display all the students in the roster");
-		System.err.println("4. Remove the student from the list using ID");
+		System.out.println("4. Remove the student from the list using ID");
 		System.out.println("5. Exit");
 		System.out.println();
 		
@@ -135,6 +110,11 @@ public class Assignment_day8 {
 			if(roster_names.contains(new_name)) {
 				System.out.println("Please enter course name");
 				String cname = sc.next();
+				System.out.println("Please enter course id");
+				int cid = sc.nextInt();
+				System.out.println("Please enter course semester");
+				String csem = sc.next();
+				CourseData c = new CourseData(cname,cid,csem);
 				//find student in roster
 				int index=0;
 				for(int i=0;i<roster.size();i++) {
@@ -142,7 +122,7 @@ public class Assignment_day8 {
 						index=i;
 					}
 				}
-				roster.get(index).courseList.add(cname);
+				roster.get(index).courseList.add(c);
 				
 				
 				
