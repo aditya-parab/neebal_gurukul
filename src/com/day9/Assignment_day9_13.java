@@ -1,12 +1,12 @@
 package com.day9;
 
-public class Assignment_day9_9 {
+public class Assignment_day9_13 {
+
 	public static void main(String[] args) {
-		
-		String s1 = "abcde";
-		String s2 = "deabc";
-		
+		// TODO Auto-generated method stub
+		String s1 = "hello";
 		char [] arr = s1.toCharArray();
+		String ans="";
 		
 		for(int i=0;i<arr.length;i++) {
 			for(int j=0;j<arr.length-1;j++) {
@@ -21,18 +21,15 @@ public class Assignment_day9_9 {
 				check+=arr[k];
 			}
 			
-			System.out.println(check);
 			
-			if(check.equals(s2)) {
-				System.out.println("It is rotated");
-			System.exit(0);	
+			
+			if(!(check.equals(s1))) {
+				System.out.println(check);
+			
 			}
 			
 			
 		}
-		
-		System.out.println("It is not rotated");
-		System.exit(0);
-	}
 	}
 
+}
