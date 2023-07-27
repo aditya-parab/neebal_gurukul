@@ -7,6 +7,8 @@ public class Assignment_day9_15 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter string:");
 		String st = sc.nextLine();
 		
 		String[] arr= st.split(" ");
@@ -15,7 +17,7 @@ public class Assignment_day9_15 {
 	    for(int i=0;i<arr.length;i++){
             rev = arr[i]+" "+rev;
         }
-		System.out.println(rev);
+		System.out.println(rev.trim());
 	}
 
 }

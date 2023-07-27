@@ -10,8 +10,9 @@ public class Assignment_day9_3 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-//		String s = sc.next();
-		String s = "neeeballll";
+		System.out.println("Enter string:");
+		String s = sc.next();
+//		String s = "neeeballll";
 		String res = "";
 		int i =1;
 		int flag=0;
@@ -45,7 +46,7 @@ public class Assignment_day9_3 {
 				i++;
 			
 		}
-		System.out.println("hi");
+//		System.out.println("hi");
 		res+=s.charAt(s.length()-1);
 		
 		if(flag==1)

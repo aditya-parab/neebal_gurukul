@@ -7,25 +7,27 @@ public class Assignment_day9_2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("enter string:");
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
 		
 		String word = sc.next();
-		ArrayList<Integer> indexes = new ArrayList<Integer>();
-        String lowerCaseTextString = s.toLowerCase();
-        String lowerCaseWord = word.toLowerCase();
+		String ans = "";
+        s = s.toLowerCase();
+        word = word.toLowerCase();
 
-        int index = 0;
+        int i = 0;
         int count =0;
-        while(index != -1){
-            index = lowerCaseTextString.indexOf(lowerCaseWord, index);
-            if (index != -1) {
-                indexes.add(index);
-                index++;
+        while(i != -1){
+            i = s.indexOf(word, i);
+            if (i != -1) {
+                ans+=i+",";
+                i++;
                 count++;
             }
         }
-        System.out.println(count);
+//        ans+="]";
+        System.out.println(ans.substring(0,ans.length()-1));
 
 	}
 

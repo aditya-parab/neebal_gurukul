@@ -1,10 +1,16 @@
 package com.day9;
 
+import java.util.Scanner;
+
 public class Assignment_day9_20 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-String s1 = "hello my name is aditya";
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter string:");
+		String s1 = sc.nextLine();
+		s1=s1.trim();
+//String s1 = "hello my name is aditya";
 String[] arr = s1.split(" ");
 String ans="";
 for(String a:arr) {

@@ -5,6 +5,7 @@ public class Assignment_day9_1 {
 	
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
+	System.out.println("enter your string");
 
 	String s1 = sc.nextLine();
 	

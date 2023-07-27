@@ -8,7 +8,7 @@ public class Assignment_day9_6 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the string");
-		String s = sc.next();
+		String s = sc.nextLine();
 		
 		System.out.println("enter the character to replace");
 		String s0 = sc.next();
