@@ -16,7 +16,7 @@ public class Assignment_day9_8 {
 		int l1=left;
 //		System.out.println(l1);
 //		System.out.println(h1);	
-		while(l1<h1-1) {
+		while(l1<h1) {
 			if(s.charAt(l1)!=s.charAt(h1)) {//characters dont match; cant be palindrome
 				flag=1;
 				break;
@@ -27,7 +27,7 @@ public class Assignment_day9_8 {
 		}
 		if(flag==0) { //all characters matched
 //			return right-left+1;
-			return new int [] {right,left+1};
+			return new int [] {left,right+1};
 		}
 		else {
 //			return 0;
@@ -42,23 +42,27 @@ public class Assignment_day9_8 {
 		// TODO Auto-generated method stub
 		System.out.println("please enter the string");
 		Scanner sc = new Scanner(System.in);
-		String s = sc.next();
-//		String s = "aabaa";
+//		String s = sc.next();
+		String s = "cbbd";
 		
 		int maxcount=0;
 //		System.out.println(countPalindromeLength(0, 4, s));
 		for(int i=0;i<s.length();i++) {
 		
 			for(int j=i;j<s.length();j++) {
-				if((j-i-1)%2==0)
+//				System.out.println(i+" "+j);
+//				if((s.length()-1)%2==0)
 				count=countPalindromeLength(i,j, s);
-				else {
-					count=countPalindromeLength(i, j-1, s);
-				}
+//				else {
+//					count=countPalindromeLength(i, j-1, s);
+//				}
 				
 				if(count[1]-count[0]+1>maxcount) {
+					maxcount = count[1]-count[0]+1;
 					res[0]=count[0];
-					res[1]=res[1];
+					res[1]=count[1];
+					
+					
 				}
 
 //				maxcount = Math.max(count,maxcount);
@@ -68,12 +72,13 @@ public class Assignment_day9_8 {
 		}
 		
 		if((s.length()-1)%2==0) {
-			System.out.println(""+s.substring(res[1], res[0]));
+			System.out.println(""+s.substring(res[0], res[1]));
 		}
 //		System.out.println(maxcount+1);
 //			System.out.println(Arrays.toString(res));
 		else {
-			System.out.println(""+s.substring(res[1], res[0]));
+//			System.out.println(res[1]);
+			System.out.println(""+s.substring(res[0], res[1]));
 		}
 		
 		
