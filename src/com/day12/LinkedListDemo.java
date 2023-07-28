@@ -49,7 +49,7 @@ class LinkedList<T extends Comparable<T>>{
 		while(temp!=null) {
 		if(temp.getNext()!=null)
 		msg+=(temp.getData()+" ");
-		else {
+		else {			//in case we are at the last index we don't append a space
 			msg+=(temp.getData()+"");
 		}
 		temp=temp.getNext();
@@ -119,20 +119,35 @@ class LinkedList<T extends Comparable<T>>{
 	
 	//reverse the list
 	void reverse() {
-		Node<T> curr = first;
-		Node<T> nextNode = first;
 		Node<T> prev = null;
-		while(curr!=null ) {
-		nextNode=nextNode.getNext();
-		curr.setNext(prev);
-		prev=curr;
-		curr=nextNode;
+		Node<T> curr = first;
 		
+		while(curr!=null) {
+			Node<T> nextNode = curr.getNext();
+			curr.setNext(prev);
+			prev = curr;
+			curr = nextNode;
 		}
-		first=prev;
-		return;
+		first = prev;
+		
 		
 	}
+	
+//	void reverse() {
+//		Node<T> curr = first;
+//		Node<T> nextNode = first;
+//		Node<T> prev = null;
+//		while(curr!=null ) {
+//		nextNode=nextNode.getNext();
+//		curr.setNext(prev);
+//		prev=curr;
+//		curr=nextNode;
+//		
+//		}
+//		first=prev;
+//		return;
+//		
+//	}
 	
 	//inserts the element at the given index
 	public boolean insertAt(T data, int index) {
