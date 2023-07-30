@@ -29,6 +29,9 @@ class MusicFileFormatException extends Exception{
 }
 
 class NoRecommendationException extends Exception{
+	
+
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
@@ -126,6 +129,11 @@ class MusicRecommender{
 			}
 		}
 		
+		if(newMusicList.isEmpty()) {
+			System.out.println("Sorry we did not find any artist like your favorite artist");
+			throw new NoRecommendationException();
+		}
+		
 		
 		
 		return newMusicList;
@@ -161,15 +169,18 @@ class MusicRecommender{
 				this.records[i] = this.records[i].replace(oldPopularityStr, updatedPopularityStr);
 			}
 			
+			
+			
 		}
-		
+		if(newMusic.getArtist().equals(null))
+			throw new NoRecommendationException();
 		
 		return newMusic;
 		//increase popularity
 	}
 	
 	public Music  BPMBasedRecommendation(MusicProfile musicProfile) throws NoRecommendationException {
-		Music newMusic = new Music("test","","",0,0);
+		Music newMusic = new Music("","","",0,0);
 		int min =Integer.MAX_VALUE;
 		for(int i=0;i<records.length;i++) {
 		      String track_name = this.records[i].split(" ")[0];
@@ -201,9 +212,13 @@ class MusicRecommender{
 		      
 		      
 		}
+		
+		if(newMusic.getArtist().equals(null))
+			throw new NoRecommendationException();
+		
 		return newMusic;
 	}
-	public Music getMostPopularMusic() {
+	public Music getMostPopularMusic() throws NoRecommendationException {
 		Music newMusic = new Music("","","",0,0);
 		
 		for(int i=0;i<records.length;i++) {
@@ -237,10 +252,13 @@ class MusicRecommender{
 		      
 		}
 		
+		if(newMusic.getArtist().equals(null))
+			throw new NoRecommendationException();
+		
 		
 		return newMusic;
 	}
-	public void saveMusicList() {
+	public void saveMusicList() throws FileNotFoundException {
         String outputFilePath = getMusicListFileName();
         String[] dataArray = records;
         try {
@@ -262,6 +280,7 @@ class MusicRecommender{
             // Handle any potential exceptions
             e.printStackTrace();
         }
+    
 	}
 	
 	
