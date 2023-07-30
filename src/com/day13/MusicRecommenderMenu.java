@@ -117,7 +117,12 @@ class MusicRecommender{
 				this.artist_name=artist_name;
 				this.genre=genre;
 				this.BPM=BPM;
-				this.popularity=++popularity;
+				
+				popularity++;
+				this.popularity=popularity;
+				String oldPopularityStr = this.records[i].split(" ")[4];
+				String updatedPopularityStr = Integer.toString(popularity);
+				this.records[i] = this.records[i].replace(oldPopularityStr, updatedPopularityStr);
 			}
 		}
 		
@@ -148,7 +153,12 @@ class MusicRecommender{
 				this.artist_name=artist_name;
 				this.genre=genre;
 				this.BPM=BPM;
-				this.popularity=++popularity;
+				this.popularity=popularity+1;
+				popularity++;
+				this.popularity=popularity;
+				String oldPopularityStr = this.records[i].split(" ")[4];
+				String updatedPopularityStr = Integer.toString(popularity);
+				this.records[i] = this.records[i].replace(oldPopularityStr, updatedPopularityStr);
 			}
 			
 		}
@@ -216,7 +226,12 @@ class MusicRecommender{
 					this.artist_name=artist_name;
 					this.genre=genre;
 					this.BPM=BPM;
+//					this.popularity=popularity;
+					popularity++;
 					this.popularity=popularity;
+					String oldPopularityStr = this.records[i].split(" ")[4];
+					String updatedPopularityStr = Integer.toString(popularity);
+					this.records[i] = this.records[i].replace(oldPopularityStr, updatedPopularityStr);;
 		      }
 		      
 		      
@@ -343,7 +358,7 @@ class MusicRecommender{
                 case 5 -> { }
             }
         }
-//        musicRecommender.saveMusicList();
+        musicRecommender.saveMusicList();
         System.out.println("Thanks for using the music recommender!");
     }
 }
