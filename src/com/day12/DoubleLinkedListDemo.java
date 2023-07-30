@@ -90,21 +90,34 @@ class DoubleLinkedList<T extends Comparable<T>>{
 	public boolean delNode(T data) {
 		DNode<T> curr = first;
 		
+
 		while(curr.getNext()!=null) {
+			DNode<T> previousNode = curr.getPrevious();
+			DNode<T> nextNode = curr.getNext();
+			System.out.println("curr is"+curr);
+			System.out.println("next is"+nextNode);
 			if(curr.getData().compareTo(data)==0) {
-				DNode<T> previousNode = curr.getPrevious();
-				DNode<T> nextNode = curr.getNext();
+			
 				if(previousNode==null) {
 					nextNode.setPrevious(null);
 					first=nextNode;
 					return true;
 				}
+				
+				
+		
+				
+				
 				previousNode.setNext(curr.getNext());
 				nextNode.setPrevious(curr.getPrevious());
+		
 				
-			
-				
-				
+			}
+			//just know that while loop condition curr is stopping at 30
+			if(nextNode.getData().compareTo(data)==0) {
+				curr.setNext(null);
+		
+				return true;
 				
 			}
 			curr=curr.getNext();
@@ -131,7 +144,9 @@ public class DoubleLinkedListDemo {
 		x.add(40);
 		System.out.println(x);
 //		System.out.println(x.reversedisplay());
-		System.out.println(x.delNode(10));
+//		System.out.println(x.delNode(10));
+		System.out.println(x.delNode(40));
+		
 		System.out.println(x);
 	
 

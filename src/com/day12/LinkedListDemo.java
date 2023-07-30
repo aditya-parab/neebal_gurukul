@@ -133,21 +133,7 @@ class LinkedList<T extends Comparable<T>>{
 		
 	}
 	
-//	void reverse() {
-//		Node<T> curr = first;
-//		Node<T> nextNode = first;
-//		Node<T> prev = null;
-//		while(curr!=null ) {
-//		nextNode=nextNode.getNext();
-//		curr.setNext(prev);
-//		prev=curr;
-//		curr=nextNode;
-//		
-//		}
-//		first=prev;
-//		return;
-//		
-//	}
+
 	
 	//inserts the element at the given index
 	public boolean insertAt(T data, int index) {
