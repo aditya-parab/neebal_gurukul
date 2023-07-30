@@ -359,6 +359,7 @@ class MusicRecommender{
             }
         }
         musicRecommender.saveMusicList();
+        
         System.out.println("Thanks for using the music recommender!");
     }
 }
