@@ -1,6 +1,7 @@
 package day15;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Assignment_day15_5 {
@@ -57,7 +58,8 @@ public class Assignment_day15_5 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method 
 		int [] asteroids = {-2,-1,1,2};
-		System.out.println(asteroidCollision(asteroids));
+		int [] ans = asteroidCollision(asteroids);
+		System.out.println(Arrays.toString(ans));
 		
 		
 
