@@ -14,7 +14,7 @@ public class convertAdjMatrixToAdjList {
 			
 			for(int j=0;j<matrix[i].length;j++) {
 				if(matrix[i][j]==1) {
-					row.add(j+1);
+					row.add(j);
 				}
 			}
 			adjList.add(row);
