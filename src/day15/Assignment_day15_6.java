@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Assignment_day15_5 {
+public class Assignment_day15_6 {
 	
 	public static int[] asteroidCollision(int [] asteroids) {
 

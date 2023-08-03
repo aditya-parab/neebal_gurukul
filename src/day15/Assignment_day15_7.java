@@ -1,10 +1,10 @@
-package com.day16;
+package day15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class stockSpan {
+public class Assignment_day15_7 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
