@@ -1,13 +1,11 @@
-package com.day16;
+package com.day17;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
-public class DFS {
+public class Prims {
 	
-	public static ArrayList<ArrayList<Integer>> convertToAdjList(int[][] matrix) {
+public static ArrayList<ArrayList<Integer>> convertToAdjList(int[][] matrix) {
 		
 		ArrayList<ArrayList<Integer>> adjList = new ArrayList<ArrayList<Integer>>();
 		
@@ -27,7 +25,9 @@ public class DFS {
 		
 	}
 	
-	public static ArrayList<Integer> dfs(ArrayList<ArrayList<Integer>> adjList) {
+	
+	
+	public static int dfs(ArrayList<ArrayList<Integer>> adjList) {
 	    ArrayList<Integer> dfs = new ArrayList<>();
 	    
 	    Stack<Integer> stack = new Stack<>();
@@ -35,13 +35,16 @@ public class DFS {
 	    
 	    stack.push(0); // Start from node 0
 	    visited[0] = true;
-	    
+	    int total=0;
 	    while (!stack.isEmpty()) {
 	        int node = stack.pop();
 	        dfs.add(node);
 	        
 	        for (int neighbor : adjList.get(node)) {
-	            if (!visited[neighbor]) {
+	        	int min = Integer.MAX_VALUE;
+	            if (!visited[neighbor] && neighbor<min) {
+	            	min=neighbor;
+	            	total+=neighbor;
 	                visited[neighbor] = true;
 	                stack.push(neighbor);
 	                break;
@@ -49,32 +52,31 @@ public class DFS {
 	        }
 	    }
 	    
-	    return dfs;
+	    return total;
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [][] adj = 
-			{   {0,1,0,1,0,0,0},//A
-				{1,0,1,0,0,0,1},//B
-				{0,1,0,0,0,1,1},//C
-				{1,0,0,0,1,0,1},//D
-				{0,0,0,1,0,1,0},//E
-				{0,0,1,0,1,0,1},//F
-				{0,1,1,1,0,1,0} //G  
-				};
+		
+		int adj[][]= {{0,4,0,8,0,0,0,0},
+				{4,0,3,0,0,0,0,0},
+				{0,3,0,0,0,0,2,1},
+				{8,0,0,0,3,0,0,0},
+				{0,0,0,3,0,7,0,0},
+				{0,0,0,4,7,0,6,0},
+				{0,0,2,5,0,6,0,7},
+				{0,0,1,0,0,2,7,0}};
+
 		
 		ArrayList<ArrayList<Integer>> adjList = convertToAdjList(adj);
 		
 //		System.out.println(dfs(adjList));
-		ArrayList<Integer> ans = dfs(adjList);
+		int ans = dfs(adjList);
 		
-		for(int i: ans) {
-			System.out.print((char)(i+65)+" ");
-		}
+//		for(int i: ans) {
+//			System.out.print((char)(i+65)+" ");
+//		}
+		System.out.println(ans);
 		
-		
-
 	}
 
 }
