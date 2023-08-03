@@ -13,7 +13,7 @@ public class convertAdjMatrixToAdjList {
 			ArrayList<Integer> row = new ArrayList<Integer>();
 			
 			for(int j=0;j<matrix[i].length;j++) {
-				if(matrix[i][j]==1) {
+				if(matrix[i][j]==1 ) {
 					row.add(j);
 				}
 			}
