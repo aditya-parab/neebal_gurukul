@@ -4,26 +4,26 @@ import java.util.Arrays;
 
 
 
-public class Prims {
+public class Dijkstras {
 
     public static void main(String[] args) {
 	// TODO Auto-generated method stub
 	int mat[][] = {
-		{ Integer.MAX_VALUE, 4, Integer.MAX_VALUE, 8, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE,
-			Integer.MAX_VALUE },
-		{ 4, Integer.MAX_VALUE, 3, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE,
-			Integer.MAX_VALUE },
-		{ Integer.MAX_VALUE, 3, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 2,
+		{ 1000, 4, 1000, 8, 1000, 1000, 1000,
+			1000 },
+		{ 4, 1000, 3, 1000, 1000, 1000, 1000,
+			1000 },
+		{ 1000, 3, 1000, 1000, 1000, 1000, 2,
 			1 },
-		{ 8, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 3, Integer.MAX_VALUE, Integer.MAX_VALUE,
-			Integer.MAX_VALUE },
-		{ Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 3, Integer.MAX_VALUE, 7, Integer.MAX_VALUE,
-			Integer.MAX_VALUE },
-		{ Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 4, 7, Integer.MAX_VALUE, 6,
-			Integer.MAX_VALUE },
-		{ Integer.MAX_VALUE, Integer.MAX_VALUE, 2, 5, Integer.MAX_VALUE, 6, Integer.MAX_VALUE, 7 },
-		{ Integer.MAX_VALUE, Integer.MAX_VALUE, 1, Integer.MAX_VALUE, Integer.MAX_VALUE, 2, 7,
-			Integer.MAX_VALUE } };
+		{ 8, 1000, 1000, 1000, 3, 1000, 1000,
+			1000 },
+		{ 1000, 1000, 1000, 3, 1000, 7, 1000,
+			1000 },
+		{ 1000, 1000, 1000, 4, 7, 1000, 6,
+			1000 },
+		{ 1000, 1000, 2, 5, 1000, 6, 1000, 7 },
+		{ 1000, 1000, 1, 1000, 1000, 2, 7,
+			1000 } };
 
 	prims(mat);
     }
@@ -43,12 +43,12 @@ public class Prims {
 
 	int count = 1; //since start/0 is already taken care of
 
-	while (count < mat.length) {//to keep updating start and so keep repeating for all unselected nodes
+	while (count < mat.length) { //to keep updating start and so keep repeating for all unselected nodes
 	    for (int i = 0; i < mat.length; i++) {
-	    	
-		    if (mat[start][i] < distanceArr[i] &&!visited[i]) {
+		
+		    if (mat[start][i]+distanceArr[start] < distanceArr[i] &&!visited[i]) {
 		    	parent[i] = start;
-		    	distanceArr[i] = mat[start][i];
+		    	distanceArr[i] = mat[start][i]+distanceArr[start ];
 			
 
 		    }
