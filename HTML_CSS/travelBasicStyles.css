@@ -1,0 +1,42 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+
+header img {
+    /* width: auto; */
+    width: 100%;
+    height: 50px;
+
+     object-fit: cover
+    
+}
+
+.overlay{
+    position: absolute; 
+    top: 0%;
+    left: 0%;
+    /* z-index:1;   */
+}
+
+.font{
+
+color: brown;
+
+}
+
+.quickcontents{
+    border: 3px grey solid;
+    /* display: inline-block; */
+    width: fit-content;
+    margin-top: 0px;
+    background-color: lightgreen;
+}
+
+.mainbody{
+    display: flex;
+}
+
+
